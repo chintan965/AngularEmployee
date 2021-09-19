@@ -17,4 +17,8 @@ export class EmpserviceService {
   EmpUserName:this.formdata.EmpUserName,Emppassword:this.formdata.Emppassword}
     return this.http.post('api/Auth/Register',data);
   }
+  Login(EmpUserName:string,Emppassword:string){
+      var data={EmpUserName:this.formdata.EmpUserName,Emppassword:this.formdata.Emppassword}
+        return this.http.post('/api/Auth/Login',data);
+    }
 }

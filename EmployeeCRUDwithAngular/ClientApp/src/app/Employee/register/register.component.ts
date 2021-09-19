@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Employee } from 'src/app/Model/employee';
 import { EmpserviceService } from 'src/app/shared/empservice.service';
 
@@ -9,7 +10,7 @@ import { EmpserviceService } from 'src/app/shared/empservice.service';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(public service:EmpserviceService) { }
+  constructor(public service:EmpserviceService,public route:Router) { }
 
   ngOnInit(): void {
   }
@@ -20,6 +21,7 @@ export class RegisterComponent implements OnInit {
       emp.Empdesig,emp.Empmobile,emp.Empage,
       emp.Empaddress,emp.EmpUserName,emp.Emppassword).subscribe(res=>{
         console.log(res);
+        this.route.navigateByUrl("/Login");
       },err=>{
         console.log(err);
       })

@@ -16,6 +16,12 @@ namespace EmployeeCRUDwithAngular.Repository
             _Context = context;
         }
 
+        public Employee GetById(string EmpUserName)
+        {
+            var emp = _Context.Employee.Where(x => x.EmpUserName == EmpUserName).FirstOrDefault();
+            return emp;
+        }
+
         public void Register(Employee Emp)
         {
             try

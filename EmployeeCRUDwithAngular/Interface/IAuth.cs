@@ -9,5 +9,6 @@ namespace EmployeeCRUDwithAngular.Interface
     public interface IAuth
     {
         void Register(Employee Emp);
+        Employee GetById(string EmpUserName);
     }
 }
