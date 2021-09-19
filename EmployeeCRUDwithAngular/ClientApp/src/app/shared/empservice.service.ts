@@ -8,17 +8,17 @@ export class EmpserviceService {
    formdata=new Employee;
 // readonly baseurl:'http://localhost:64428/api/Auth/';
   constructor(private http:HttpClient) { }
-  Register(EmpId:number,Empname:string,Empdesig:string,Empmobile:string,
-    Empage:string,Empaddress:string,EmpUserName:string,
-    Emppassword:string){
+  Register(name:string,desig:string,mobile:string,
+    age:string,address:string,
+    password:string,Email:string){
       debugger;
-    var data={EmpId:this.formdata.EmpId,Empname:this.formdata.Empname,Empdesig:this.formdata.Empdesig,
-    Empmobile:this.formdata.Empmobile,Empage:this.formdata.Empage,Empaddress:this.formdata.Empaddress,
-  EmpUserName:this.formdata.EmpUserName,Emppassword:this.formdata.Emppassword}
+    var data={name:this.formdata.name,desig:this.formdata.desig,
+    mobile:this.formdata.mobile,age:this.formdata.age,address:this.formdata.address,
+  password:this.formdata.password,Email:this.formdata.Email}
     return this.http.post('api/Auth/Register',data);
   }
   Login(EmpUserName:string,Emppassword:string){
-      var data={EmpUserName:this.formdata.EmpUserName,Emppassword:this.formdata.Emppassword}
+      var data={EmpUserName:this.formdata.UserName,Emppassword:this.formdata.password}
         return this.http.post('/api/Auth/Login',data);
     }
 }

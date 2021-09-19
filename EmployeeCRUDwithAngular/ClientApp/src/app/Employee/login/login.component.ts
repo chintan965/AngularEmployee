@@ -14,12 +14,12 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     debugger;
     var emp=new Employee;
-    emp.EmpUserName='';
-    emp.Emppassword='';
+    emp.UserName='';
+    emp.password='';
   }
 Login(){
   var emp=new Employee;
-  return this.service.Login(emp.EmpUserName,emp.Emppassword).subscribe(res=>{
+  return this.service.Login(emp.UserName,emp.password).subscribe(res=>{
     console.log(res);
   },err=>{
     console.log(err);

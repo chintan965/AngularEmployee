@@ -17,9 +17,9 @@ export class RegisterComponent implements OnInit {
   Register(){
     debugger;
     var emp=new Employee;
-    return this.service.Register(emp.EmpId,emp.Empname,
-      emp.Empdesig,emp.Empmobile,emp.Empage,
-      emp.Empaddress,emp.EmpUserName,emp.Emppassword).subscribe(res=>{
+    return this.service.Register(emp.name,
+      emp.desig,emp.mobile,emp.age,
+      emp.address,emp.password,emp.Email).subscribe(res=>{
         console.log(res);
         this.route.navigateByUrl("/Login");
       },err=>{

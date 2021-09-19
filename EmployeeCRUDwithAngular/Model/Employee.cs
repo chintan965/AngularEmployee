@@ -1,21 +1,24 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace EmployeeCRUDwithAngular.Model
 {
-    public class Employee
+    public class Employee:IdentityUser
     {
-        [Key]
-        public int EmpId { get; set; }
-        public string Empname { get; set; }
-        public string Empdesig { get; set; }
-        public string Empmobile { get; set; }
-        public string Empage { get; set; }
-        public string Empaddress { get; set; }
-        public string EmpUserName { get; set; }
-        public string Emppassword { get; set; }
+
+        public int Id { get; set; }
+        public string name { get; set; }
+        public string desig { get; set; }
+        public string mobile { get; set; }
+        public string age { get; set; }
+
+        public string Email { get; set; }
+        public string address { get; set; }
+        
+        public string password { get; set; }
     }
+
 }
