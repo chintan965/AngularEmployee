@@ -1,38 +1,37 @@
 <!DOCTYPE html>
-<!-- Created By CodingLab - www.codinglabweb.com -->
-<html lang="en" dir="ltr">
-
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <!---<title> Responsive Registration Form | CodingLab </title>--->
-    <link rel="stylesheet" href="../register/register.component.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple login form with social login buttons using HTML and CSS</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-
 <body>
-    <div class="container">
-        <div class="title">Login</div>
-        <div class="content">
-            <form action="#">
-                <div class="user-details">
-                    <div class="input-box">
-                        <span class="details">UserName</span>
-                        <input type="text" placeholder="UserName" required
-                            [(ngModel)]="this.service.formdata.EmpUserName" [ngModelOptions]="{standalone: true}">
-                    </div>
-                    <div class="input-box">
-                        <span class="details">Password</span>
-                        <input type="password" placeholder="password" required
-                            [(ngModel)]="this.service.formdata.Emppassword" [ngModelOptions]="{standalone: true}">
-                    </div>
-                </div>
-                <div class="button">
-                    <input type="submit" value="Login" (click)="Login()">
-                </div>
-            </form>
-        </div>
-    </div>
-
+  <div class="login-form">
+    <form>
+      <h1>Login</h1>
+      <div class="form-group">
+        <input type="email" name="UserName" placeholder="UserName" [(ngModel)]="this.service.formdata.EmpUserName" 
+        [ngModelOptions]="{standalone: true}">
+        <span class="input-icon"><i class="fa fa-user"></i></span>
+      </div>
+      <div class="form-group">
+        <input type="password" name="psw" placeholder="Password" [(ngModel)]="this.service.formdata.Emppassword" 
+        [ngModelOptions]="{standalone: true}">
+        <span class="input-icon"><i class="fa fa-lock"></i></span>
+      </div>      
+      <button class="login-btn">Login</button>      
+      <a class="reset-psw" href="#">Forgot your password?</a>
+      <div class="seperator"><b>or</b></div>
+      <p>Sign in with your social media account</p>
+      <!-- Social login buttons -->
+      <div class="social-icon">
+        <button type="button"><i class="fa fa-twitter"></i></button>
+        <button type="button"><i class="fa fa-facebook"></i></button>
+        <button type="button"><i class="fa fa-google"></i></button>
+        <button type="button"><i class="fa fa-instagram"></i></button>
+      </div>
+    </form>
+  </div>
 </body>
-
 </html>

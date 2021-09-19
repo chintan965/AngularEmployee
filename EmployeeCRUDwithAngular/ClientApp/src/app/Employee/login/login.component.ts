@@ -12,6 +12,10 @@ export class LoginComponent implements OnInit {
   constructor(public service:EmpserviceService) { }
 
   ngOnInit(): void {
+    debugger;
+    var emp=new Employee;
+    emp.EmpUserName='';
+    emp.Emppassword='';
   }
 Login(){
   var emp=new Employee;
